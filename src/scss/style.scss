@@ -1,0 +1,11 @@
+// vendor styles
+@import "vendor/normalize.scss";
+
+// include styles
+@import "./variables.scss";
+@import "include/include.scss";
+
+// blocks
+@import "blocks/header/header.scss";
+@import "blocks/main/main.scss";
+@import "blocks/footer/footer.scss";

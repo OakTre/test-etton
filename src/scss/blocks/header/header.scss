@@ -1,0 +1,11 @@
+.header {
+
+    &__title {
+        font-size: rem(40px);
+        margin: 0;
+        color: $main-color;
+        @include _1440 {
+            font-size: rem(20px);
+        }
+    }
+}
