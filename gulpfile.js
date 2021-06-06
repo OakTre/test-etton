@@ -149,7 +149,7 @@ exports.styles = styles;
 exports.watchFiles = watchFiles;
 exports.pugBuild = pugBuild;
 
-exports.default = series(clean, parallel(pugBuild, scripts, imgToApp, svgSprites, copySvg, copyFonts), styles, watchFiles);
+exports.default = series(clean, parallel(pugBuild, scripts, imgToApp, svgSprites, copySvg, copyFonts, resourses), styles, watchFiles);
 
 // build версия ---- gulp.build
 const stylesBuild = () => {
@@ -196,7 +196,7 @@ const scriptsBuild = () => {
         .pipe(dest("./app/js"))
 
 }
-exports.build = series(clean, parallel(pugBuild, scriptsBuild, imgToApp, svgSprites, copySvg, copyFonts), stylesBuild, watchFiles);
+exports.build = series(clean, parallel(pugBuild, scriptsBuild, imgToApp, svgSprites, copySvg, copyFonts, resourses), stylesBuild, watchFiles);
 
 
 // преобразовать изображения в wbp ---- gulp.toWebp
