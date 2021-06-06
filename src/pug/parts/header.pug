@@ -1,2 +1,7 @@
 header.header
-	h1 header
+	button.button_burger.header__burger.button-reset.js--burger
+		+icon("burger")
+	.site-container
+		.header__inner
+			a(class="header__logo", href="index.html")
+				+imgLazy("./img/logo.svg", "Логотип")(src="img/logo.svg")

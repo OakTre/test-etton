@@ -1,5 +1,6 @@
-.hero
-	h1 Hero Heading
-	+icon-mono("inst")(class="test", width="50", height="50")
-	//- +imgLazy("img/1.jpg", "alt text")(src="img/1.jpg")
-	+picture("img/1.jpg")
+section.section.hero
+	.site-container
+		.hero__inner
+			button(class="hero__button button button-reset js--open-modal", data-modal-name="add-item")
+				span(data-text="Add item")
+					|Add item

@@ -2,3 +2,198 @@
 @import "settings/setttings.scss";
 @import "func/px-to-rem.scss";
 @import "mixins/media.scss";
+
+.button-reset {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+}
+
+.button_burger {
+	width: 70px;
+	height: 70px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color $main-transition, opacity $main-transition;
+	opacity: 0.8;
+
+
+	.icon-burger {
+		fill: $main-color;
+		width: 70px;
+		height: 70px;
+	}
+
+	&:active {
+		background-color: $color-grey--3;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	@include _740 {
+		width: 60px;
+		height: 60px;
+
+		.icon-burger {
+			width: 60px;
+			height: 60px;
+		}
+	}
+
+	@include _320 {
+		width: 50px;
+		height: 50px;
+
+		.icon-burger {
+			width: 50px;
+			height: 50px;
+		}
+	}
+}
+
+.button {
+	position: relative;
+	z-index: 10;
+	display: inline-block;
+	padding: 15px 63px;
+	color: $color-white;
+	background-color: $color-purple;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color .3s ease, opacity .3s ease;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		box-shadow: 0 5px 10px rgba($color: $color-purple--darker, $alpha: 0.5);
+		border-radius: 10px;
+		opacity: 0;
+		transition: opacity .3s ease;
+	}
+
+	&:hover {
+		background-color: $color-purple--darker;
+
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	&:active {
+		background-color: $color-purple--dark;
+	}
+
+	&-disabled {
+		opacity: .5;
+		pointer-events: none;
+	}
+}
+
+.nav {
+	&__list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__item {
+		border-bottom: 1px solid $color-grey--2;
+		transition: background-color $main-transition;
+
+		&:nth-child(1) {
+			border-top: 1px solid $color-grey--2;
+		}
+
+		&:hover {
+			background-color: $color-grey--2;
+		}
+
+		&:active {
+			background-color: $color-grey--3;
+		}
+
+		&.nav__item-current-page {
+			background-color: $color-grey--2;
+			.nav__item_link {
+				transform: translateX(10px);
+			}
+		}
+	}
+
+	&__item_link {
+		display: block;
+		padding: 15px 0;
+		padding-left: 15px;
+		text-decoration: none;
+		color: inherit;
+		font-size: 1.5rem;
+		font-weight: 700;
+		transition: transform $main-transition;
+
+		span {
+			display: inline-block;
+		}
+
+		&:hover {
+			transform: translateX(10px);
+		}
+	}
+}
+
+.checkbox {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+
+	&__input {
+		&:checked {
+			&~.checkbox__name {
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__name {
+		position: relative;
+		padding-left: 30px;
+		font-size: rem(18px);
+
+		&::before {
+			content: url(../../img/checkbox-default.svg);
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 25px;
+			height: 25px;
+			transform: translateY(-50%);
+		}
+
+		&::after {
+			content: url(../../img/checkbox-active.svg);
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 25px;
+			height: 25px;
+			transform: translateY(-50%);
+			opacity: 0;
+		}
+
+		@include _360 {
+			font-size: rem(14px);
+		}
+	}
+}
+

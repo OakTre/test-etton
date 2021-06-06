@@ -1,0 +1,10 @@
+section.section.hero
+	.site-container
+		.hero__inner
+			button(class="hero__button button button-reset js--open-modal", data-modal-name="add-item")
+				span(data-text="Add item")
+					|Add item
+		.hero__cards
+			-for(let i=0; i<16; ++i) {
+				include ../../parts/card.pug
+			- }

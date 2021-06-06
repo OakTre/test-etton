@@ -1,5 +1,6 @@
 // vendor styles
 @import "vendor/normalize.scss";
+@import "vendor/custom-reset.scss";
 
 // include styles
 @import "./variables.scss";
@@ -8,4 +9,10 @@
 // blocks
 @import "blocks/header/header.scss";
 @import "blocks/main/main.scss";
+@import "blocks/main/menu/menu.scss";
+@import "blocks/card/card.scss";
+@import "blocks/modal/modal.scss";
+@import "blocks/form/form.scss";
+@import "blocks/main/hero/hero.scss";
 @import "blocks/footer/footer.scss";
+

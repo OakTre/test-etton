@@ -5,29 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Описание сайта">
-    <title>Главная | Название сайта</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./resourses/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resourses/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resourses/favicon/favicon-16x16.png">
+    <link rel="manifest" type="image/png" sizes="16x16" href="./resourses/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Главная | Тестовое задание ETTON</title>
     <link rel="stylesheet" href="./css/style.min.css?v=0.0.0.0">
   </head>
   <body class="page-home">
     <div class="page-wrapper">
       <header class="header">
-        <h1>header</h1>
+        <button class="button_burger header__burger button-reset js--burger">
+          <svg class="icon icon-burger">
+            <use xlink:href="img/sprite.svg#burger"></use>
+          </svg>
+        </button>
+        <div class="site-container">
+          <div class="header__inner"><a class="header__logo" href="index.html"><img class="lazy" data-src="./img/logo.svg" src="img/logo.svg" alt="Логотип"/></a></div>
+        </div>
       </header>
       <main class="page-main main">
-        <div class="hero">
-          <h1>Hero Heading</h1>
-          <svg class="icon icon-inst test" width="50" height="50">
-            <use xlink:href="img/sprite.svg#inst"></use>
-          </svg>
-          <picture>
-            <source type="image/webp" data-srcset="img/1.webp" srcset="img/placeholder.png"/><img class="lazy" data-src="img/1.jpg" alt=""/>
-          </picture>
-        </div>
+        <aside class="menu">
+          <div class="menu__head">
+            <button class="menu__button button-reset js--burger-cross">
+              <svg class="icon icon-cross">
+                <use xlink:href="img/sprite.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="menu__content">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item nav__item-current-page"><a class="nav__item_link" href="index.html"><span>Главная</span></a></li>
+                <li class="nav__item"><a class="nav__item_link" href="content.html"><span>Контент</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+        <section class="section hero">
+          <div class="site-container">
+            <div class="hero__inner">
+              <button class="hero__button button button-reset js--open-modal" data-modal-name="add-item"><span data-text="Add item">Add item</span></button>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer">
-        <h1>footer</h1>
+        <div class="site-container">
+          <div class="footer__inner"><a class="footer__link" href="mailto:nailgalimov8@gmail.com">nailgalimov8@gmail.com</a></div>
+        </div>
       </footer>
+      <div class="modal" data-modal="add-item">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+          <div class="modal__inner">
+            <div class="modal__head">
+              <h2 class="modal__title">Create new item</h2>
+            </div>
+            <div class="modal__info">
+              <form class="form modal__form" action="#">
+                <label class="form__label">
+                  <div class="form__label_heading">Name:</div>
+                  <input class="form__input input" type="text" name="name">
+                </label>
+                <label class="form__label">
+                  <div class="form__label_heading">Image:</div>
+                  <div class="form__input_file_wrapper">
+                    <input class="form__input form__input-file input" type="file" name="file">
+                    <div class="form__custom_input_file" data-text="Choose"></div>
+                  </div>
+                </label>
+                <label class="form__label">
+                  <div class="form__label_heading">Description:</div>
+                  <textarea class="form__textarea" name="text" placeholder="Text..."></textarea>
+                </label>
+                <label class="checkbox form__checkbox">
+                  <input class="checkbox__input visually-hidden js--checkbox-show" type="checkbox" name="show">
+                  <div class="checkbox__name">Show</div>
+                </label>
+                <div class="form__btns">
+                  <button class="button button-reset button-disabled form__button js--modal-send" type="submit">ОК</button>
+                  <button class="button button-reset form__button js--modal-cancel" type="submit">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
-  <script src="js/main.min.js?v=0.0.0.0"></script>
+  <script src="js/main.js"></script>
 </html>

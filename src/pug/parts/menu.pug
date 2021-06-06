@@ -1,0 +1,15 @@
+aside.menu
+	.menu__head
+		button.menu__button.button-reset.js--burger-cross
+			+icon("cross")
+	.menu__content
+		nav.nav
+			ul.nav__list
+				li.nav__item(class=(pageName === "index" ? "nav__item-current-page" : undefind))
+					a(class="nav__item_link", href="index.html")
+						span
+							| Главная
+				li.nav__item(class=(pageName === "content" ? "nav__item-current-page" : undefind))
+					a(class="nav__item_link", href="content.html")
+						span
+							| Контент

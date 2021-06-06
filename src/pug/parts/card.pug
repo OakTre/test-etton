@@ -1,0 +1,18 @@
+a(class="card hero__cards_item", href="#")
+	.card__head
+		h2.card__title
+			| Item name
+
+	.card__body
+		.card__img
+			+imgLazy("img/placeholder_img.png", "Описание")(src="img/placeholder_img.png")
+
+	.card__bottom
+		p.card__text
+			| Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			| Accusantium eaque eveniet deserunt provident
+			| quisquam assumenda hic velit eligendi. Vero, ullam?
+		div(class="button card__button", data-text="more")
+			span(data-text="more")
+				| more
+

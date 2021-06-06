@@ -1,3 +1,5 @@
-import { sd } from "./func";
+import { initMenu } from "./blocks/menu";
+import { initModal } from "./blocks/modal"
 
-sd();
+initMenu();
+initModal();

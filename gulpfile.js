@@ -76,7 +76,6 @@ const scripts = () => {
         .pipe(sourcemaps.write("."))
         .pipe(dest("./app/js"))
         .pipe(browserSync.stream());
-
 }
 
 const svgSprites = () => {
@@ -107,7 +106,7 @@ const svgSprites = () => {
 }
 
 const imgToApp = () => {
-    return src("./src/img/**/*.{png,jpg,jpeg}")
+    return src("./src/img/**/*.{png,jpg,jpeg,svg}")
         .pipe(dest("./app/img/"))
 }
 
@@ -122,8 +121,8 @@ const copyFonts = () => {
 }
 
 const resourses = () => {
-    return src("./src/resourses/**")
-        .pipe(dest("./app"));
+    return src("./src/resourses/**/*")
+        .pipe(dest("./app/resourses"));
 }
 
 const clean = () => {
@@ -139,10 +138,11 @@ const watchFiles = () => {
 
     watch("./src/scss/**/*.scss", styles)
     watch("./src/pug/**/*.pug", pugBuild)
-    watch("./src/img/**/*.{png,jpg,jpeg}", imgToApp)
+    watch("./src/img/**/*.{png,jpg,jpeg,svg}", imgToApp)
     watch("./src/img/sprite/*.svg", svgSprites)
     watch("./src/resourses/**", resourses)
     watch("./src/js/**/*.js", scripts)
+
 }
 
 exports.styles = styles;

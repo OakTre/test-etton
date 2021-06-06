@@ -1,0 +1,137 @@
+.form {
+	&__label {
+		position: relative;
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	&__input {
+		width: 100%;
+		border: 1px solid $color-grey--3;
+		border-radius: 10px;
+		height: 37px;
+		padding: 10px;
+
+		&-file {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+		}
+	}
+
+	&__label_heading {
+		font-size: rem(18px);
+		margin-bottom: 10px;
+	}
+
+	&__custom_input_file {
+		position: relative;
+		z-index: 10;
+		width: 100%;
+		border: 1px solid $color-grey--3;
+		border-radius: 10px;
+		height: 37px;
+		padding: 10px;
+		cursor: pointer;
+
+		span {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			font-size: rem(12px);
+			transform: translateY(-50%);
+			text-transform: uppercase;
+			opacity: 0.6;
+			color: $color-grey--3;
+		}
+
+		&::after {
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 35%;
+			height: 100%;
+			background-color: $color-grey--2;
+			border-top-right-radius: 8px;
+			border-bottom-right-radius: 8px;
+			transition: background-color $main-transition;
+		}
+
+		&:hover {
+			&::after {
+				background-color: $color-grey--3;
+			}
+		}
+	}
+
+	&__textarea {
+		width: 100%;
+		height: 90px;
+		padding: 10px;
+		border: 1px solid $color-grey--3;
+		border-radius: 10px;
+		resize: none;
+
+		&::placeholder {
+			opacity: 0.6;
+			color: $color-grey--3;
+		}
+	}
+
+	&__checkbox {
+		margin-bottom: 20px;
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__button {
+		padding: 15px 73px;
+	}
+
+	@include _375 {
+		&__btns {
+			flex-direction: column;
+		}
+
+		&__button {
+			width: 100%;
+			margin-bottom: 15px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@include _360 {
+		&__label_heading {
+			font-size: rem(14px);
+		}
+
+		&__button {
+			padding: 12px 70px;
+		}
+
+		&__custom_input_file {
+			font-size: rem(14px);
+		}
+	}
+
+	@include _320 {
+		&__label {
+			margin-bottom: 13px;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+div(class="modal", data-modal="add-item")
+	.modal__overlay
+	.modal__content
+		.modal__inner
+			.modal__head
+				h2.modal__title
+					| Create new item
+			.modal__info
+				form(action="#" class="form modal__form")
+					label.form__label
+						.form__label_heading
+							| Name:
+						input(type="text", class="form__input input", name="name")
+					label.form__label
+						.form__label_heading
+							| Image:
+						.form__input_file_wrapper
+							input(type="file", class="form__input form__input-file input", name="file")
+							.form__custom_input_file(data-text="Choose")
+								//- span.js--input-file-text
+								//- 	| no files
+					label.form__label
+						.form__label_heading
+							| Description:
+						textarea(class="form__textarea", name="text", placeholder="Text...")
+					label.checkbox.form__checkbox
+						input(type="checkbox", name="show", class="checkbox__input visually-hidden js--checkbox-show")
+						.checkbox__name
+							| Show
+					.form__btns
+						button(type="submit",class="button button-reset button-disabled form__button js--modal-send")
+							| ОК
+						button(type="submit",class="button button-reset form__button js--modal-cancel")
+							| Cancel

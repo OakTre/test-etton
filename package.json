@@ -36,6 +36,8 @@
         "webpack-stream": "^6.1.2"
     },
     "dependencies": {
+        "body-scroll-lock": "^3.1.5",
+        "gsap": "^3.6.1",
         "normalize.css": "^8.0.1",
         "pug-include-glob": "^0.4.3"
     }

@@ -7,3 +7,13 @@
     url("./fonts/roboto-regular.woff2") format("woff2"),
     url("./fonts/roboto-regular.woff") format("woff");
 }
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Roboto";
+  font-display: swap;
+  src:
+    url("./fonts/roboto-bold.woff2") format("woff2"),
+    url("./fonts/roboto-bold.woff") format("woff");
+}

@@ -1,11 +1,36 @@
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	background-color: $color-white;
+	border-bottom: 2px solid $color-grey--2;
+	box-shadow: 0 0.5px 7px rgba($color: $color-grey--2, $alpha: 0.8);
 
-    &__title {
-        font-size: rem(40px);
-        margin: 0;
-        color: $main-color;
-        @include _1440 {
-            font-size: rem(20px);
-        }
-    }
+	&__inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 50px 0;
+	}
+
+	&__burger {
+		position: absolute;
+		top: 50%;
+		left: 50px;
+		transform: translateY(-50%);
+	}
+
+	@include _740 {
+		&__burger {
+			left: 15px
+		}
+	}
+
+	@include _480 {
+		&__inner {
+			padding: 30px 0;
+		}
+	}
 }

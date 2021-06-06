@@ -1,0 +1,92 @@
+.hero {
+	padding: 200px 0 70px 0;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__button {
+		padding: 17px 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		span {
+			display: inline-block;
+			position: relative;
+			font-size: 1.5rem;
+			line-height: 27px;
+			height: 27px;
+			overflow: hidden;
+			color: transparent;
+
+			&::before,
+			&::after {
+				content: attr(data-text);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				margin-right: -50%;
+				color: $color-white;
+				transition: transform $main-transition, opacity $main-transition;
+			}
+
+			&::after {
+				transform: translate(-50%, -25px);
+				opacity: 0;
+			}
+		}
+
+		&:hover {
+			span {
+				&::after {
+					transform: translate(-50%, -50%);
+					opacity: 1;
+				}
+
+				&::before {
+					transform: translate(-50%, 25px);
+					opacity: 0;
+				}
+			}
+		}
+
+	}
+
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: -16px;
+		margin-top: 40px;
+	}
+
+	&__cards_item {
+		margin: 16px;
+	}
+
+	@include _769 {
+		padding: 190px 0 40px 0;
+	}
+
+	@include _740 {
+		&__button {
+			padding: 15px 60px;
+			font-size: 1.3rem;
+		}
+	}
+
+	@include _480 {
+		padding: 151px 0 40px 0;
+	}
+
+
+	@include _320 {
+		&__button {
+			padding: 10px 50px;
+		}
+	}
+}
