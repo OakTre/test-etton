@@ -1,5 +1,5 @@
 # Тестовое задание для компании ETTON
-[Ссылка на проект](https://oaktre.github.io/test-etton/app/index.html)
+[Ссылка на проект](https://oaktre.github.io/test-etton/app/index.html "https://oaktre.github.io/test-etton/app/index.html")
 
 ## Список команд
 
